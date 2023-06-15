@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDo</title>
-</head>
-<body>
-  
-
-
-
-
-
-
-  <script src="./app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+    <!-- https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- vue app start -->
+      <div id="app">
+        <h1>{{title}}</h1>
+        <div>
+          <form @submit.prevent="onSubmit">
+            <input
+            type="text"
+            required
+            v-model="input.value"
+            :placeholder="input.placeholder"
+            />
+            <button>Создать</button>
+          </div>
+          <div class="notes">
+            <div class="note" v-for="(note, idx) in notes" :key="idx">
+              <p>{{idx+1}}. {{note}}</p>
+            </div>
+          </div>
+        
+      </div>
+          </form>
+          
+      <!-- vue app end  -->
+    </div>
+    <script src="./app.js"></script>
+  </body>
 </html>
