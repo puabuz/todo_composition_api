@@ -15,6 +15,9 @@ const App = {
       this.input.value = "";
       console.log(this.input.value);
     },
+    remove(idx){
+      this.notes.splice(idx, 1);
+    }
   },
 };
 

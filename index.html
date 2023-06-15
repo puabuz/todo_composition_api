@@ -25,7 +25,10 @@
           </div>
           <div class="notes">
             <div class="note" v-for="(note, idx) in notes" :key="idx">
-              <p>{{idx+1}}. {{note}}</p>
+              <p>{{idx+1}}. {{note}} 
+                <span @click="remove(idx)">&#x2715</span>
+              </p>
+              
             </div>
           </div>
         
